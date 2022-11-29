@@ -1,7 +1,7 @@
 version: "2"
 services:
   springDocker-app:
-    image: spring-app
+    image: spring-app-docker-integration
 #    container_name: springServer-compose
     restart: always
     build: .
