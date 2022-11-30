@@ -1,26 +1,28 @@
 version: "2"
 services:
-  springDocker-app:
+  springDocker-app-integration:
     image: spring-app-docker-integration
 #    container_name: springServer-compose
     restart: always
     build: .
     ports:
-      - "9100-9999:8081"
+      - "9100-9999:8082"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: cpg
-      MYSQL_HOST: mysql-server
+      MYSQL_HOST: mysql-server-integration
       MYSQL_PORT: 3306
 
   mysql_db:
      image: mysql
-     container_name: mysql-server
+     container_name: mysql-server-integration
+     volumes:
+       - C:\Users\khalifa saidi\Desktop\db1:/var/lib/mysql
      ports:
-       - "3307:3306"
+       - "3308:3306"
      environment:
        MYSQL_ROOT_PASSWORD: root
-       MYSQL_DATABASE: cpg
+       MYSQL_DATABASE: test
 
 
 
